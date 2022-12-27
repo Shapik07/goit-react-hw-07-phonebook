@@ -1,15 +1,15 @@
 import { useState } from 'react';
 import { PhoneBookForm, Label, Input, Button } from './PhoneBookForm.styled';
 import { useSelector, useDispatch } from 'react-redux';
-import { addContact } from 'components/redux/contactsSlice';
-import { getContacts } from 'components/redux/selectors';
+import { addContact } from 'components/redux/operations';
+import { selectContacts } from 'components/redux/selectors';
 import { nanoid } from 'nanoid';
 
 export default function ContactForm() {
   const [name, setName] = useState('');
   const [number, setNumber] = useState('');
 
-  const contacts = useSelector(getContacts);
+  const contacts = useSelector(selectContacts);
   const dispatch = useDispatch();
 
   const handleChangeInput = e => {
