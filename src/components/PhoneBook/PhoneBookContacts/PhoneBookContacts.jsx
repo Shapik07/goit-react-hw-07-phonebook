@@ -14,10 +14,10 @@ export const ContactsList = () => {
 
   return (
     <ContactList className="contact-list">
-      {contacts.map(({ name, number, id }) => (
+      {contacts.map(({ name, phone, id }) => (
         <ContactItem className="contact" key={id}>
           <ContactItemInfo>
-            {name}: {number}
+            {name}: {phone}
           </ContactItemInfo>
           <RemoveButton
             type="button"
